@@ -6,47 +6,30 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
-  },
-  {
-    title: "Pricing",
-    path: "/pricing",
-  },
-  {
-    title: "About",
-    path: "/about",
-  },
-  {
     title: "Blog",
     path: "/blog",
   },
   {
+    title: "Github",
+    path: "https://github.com/cisco-open/nasp",
+  },
+  {title: "Slack",
+path: "https://outshift.slack.com/",
+},
+  {
     title: "Contact",
     path: "/contact",
-  },
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
   },
 ];
 ---
 
 <Container>
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
-          >
+          ><span class="font-bold text-slate-800">NASP</span>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -79,21 +62,14 @@ const menuitems = [
                     </a>
                   </li>
                 )}
-              </>
-            ))
-          }
-        </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
-        </div>
-      </MenuItems>
+                </>
+                ))
+              }
+            <!-- <li>
+              <a class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900 github-button" href="https://github.com/cisco-open/nasp" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" aria-label="Star cisco-open/nasp on GitHub">Star</a>
+            </li> -->
+          </ul>
+        </MenuItems>
     </Astronav>
-    <div>
-      <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
-      </div>
-    </div>
   </header>
 </Container>
