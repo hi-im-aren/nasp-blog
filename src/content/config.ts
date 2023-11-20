@@ -1,5 +1,6 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection } from 'astro:content';
+import { SITE } from '../consts'
 
 // 2. Define your collection(s)
 const blogCollection = defineCollection({
@@ -31,9 +32,25 @@ const teamCollection = defineCollection({
   }),
 });
 
+const docsCollection = defineCollection({
+  schema: z.object({
+    title: z.string().default(SITE.title),
+    description: z.string().default(SITE.description),
+    dir: z.union([z.literal('ltr'), z.literal('rtl')]).default('ltr'),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string()
+      })
+      .optional(),
+    ogLocale: z.string().optional()
+  })
+})
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'blog': blogCollection,
   'team': teamCollection,
+  'docs': docsCollection,
 };

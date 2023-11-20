@@ -3,6 +3,7 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import ThemeToggleButton from "@components/docs/RightSidebar/ThemeToggleButton";
 
 const menuitems = [
   {
@@ -10,12 +11,17 @@ const menuitems = [
     path: "/blog",
   },
   {
+    title: "Docs",
+    path: "/docs",
+  },
+  {
     title: "Github",
     path: "https://github.com/cisco-open/nasp",
   },
-  {title: "Slack",
-path: "https://outshift.slack.com/",
-},
+  {
+    title: "Slack",
+    path: "https://outshift.slack.com/",
+  },
   {
     title: "Contact",
     path: "/contact",
@@ -68,6 +74,14 @@ path: "https://outshift.slack.com/",
             <!-- <li>
               <a class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900 github-button" href="https://github.com/cisco-open/nasp" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" aria-label="Star cisco-open/nasp on GitHub">Star</a>
             </li> -->
+            <li>
+              <a
+                class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                <span class="text-[10px] font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                  <ThemeToggleButton client:visible />
+                </span>
+              </a>
+            </li>
           </ul>
         </MenuItems>
     </Astronav>

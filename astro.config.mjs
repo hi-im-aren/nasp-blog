@@ -1,12 +1,14 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
+import preact from '@astrojs/preact'
+import react from '@astrojs/react'
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://hi-im-aren.github.io",
   integrations: [
     tailwind(),
     image({
@@ -14,5 +16,7 @@ export default defineConfig({
     }),
     mdx(),
     sitemap(),
+    preact(),
+    react(),
   ],
 });
