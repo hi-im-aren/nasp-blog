@@ -1,7 +1,11 @@
 ---
-const { class: className } = Astro.props;
+const { class: className, center = true } = Astro.props;
 ---
 
-<div class:list={["max-w-screen-xl mx-auto px-5", className]}>
+<div class:list={[
+  "max-w-screen-xl px-5",
+  center && "mx-auto", 
+  className
+]}>
   <slot />
 </div>

@@ -21,7 +21,7 @@ const sidebar = SIDEBAR
             <h2>{header}</h2>
             <ul>
               {children.map((child) => {
-                const url = Astro.site?.pathname + child.link
+                const url = Astro.site?.pathname + "nasp-blog/" + child.link
                 return (
                   <li class="nav-link">
                     <a
