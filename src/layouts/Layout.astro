@@ -3,9 +3,12 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
+import { string } from "astro/zod";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 export interface Props {
   title: string;
+  classProp: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -15,7 +18,9 @@ const resolvedImageWithDomain = new URL(
   Astro.site
 ).toString();
 
-const { title } = Astro.props;
+const { title, classProp } = Astro.props;
+
+const bodyClass = classProp ? classProp + " flex min-h-screen flex-col" : "flex min-h-screen flex-col";
 
 const makeTitle = title
   ? title + " | " + "NASP"
@@ -23,12 +28,13 @@ const makeTitle = title
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth antialiased">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
@@ -53,7 +59,7 @@ const makeTitle = title
       }}
     />
   </head>
-  <body>
+  <body class={bodyClass}>
     <Navbar />
     <slot />
     <Footer />

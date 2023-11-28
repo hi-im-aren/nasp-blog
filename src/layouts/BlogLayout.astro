@@ -6,8 +6,8 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title}>
-  <Container>
+<!-- <Layout title={frontmatter.title} classProp=""> -->
+  <Container classProp=" animate-fade-up animate-ease-in-out">
     <div class="mx-auto max-w-[735px] mt-14">
       <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
         {frontmatter.category}
@@ -46,4 +46,4 @@ const { frontmatter } = Astro.props;
       >
     </div>
   </Container>
-</Layout>
+<!-- </Layout> -->

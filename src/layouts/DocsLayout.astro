@@ -27,11 +27,8 @@ const editUrl = `${EDIT_URL}/${currentFile}`
 const { title } = Astro.props;
 ---
 
-<Layout title={title}>
-  <Container center=false>
-      <HeadCommon />
-      <HeadSEO {...data} canonicalUrl={canonicalURL} />
-
+<!-- <Layout title={title} classProp=''> -->
+  <!-- <Container center=false> -->
       <div class="flex flex-col h-screen">
         <Header currentPage={currentPage} />
         <main class="flex flex-1">
@@ -39,13 +36,13 @@ const { title } = Astro.props;
             <LeftSidebar currentPage={currentPage} />
           </aside>
       
-          <div id="grid-main" class="flex-1 px-2 py-4">
+          <div id="grid-main" class="flex-1 px-16 py-10">
             <PageContent title={data.title} headings={headings} editUrl={editUrl}>
               <slot />
             </PageContent>
           </div>
       
-          <aside id="grid-right" class="hidden xl:flex w-72 h-full sticky top-0 p-4">
+          <aside class="hidden xl:flex w-72 h-full sticky top-0 p-4">
             <RightSidebar headings={headings} editUrl={editUrl} />
           </aside>
         </main>
@@ -172,6 +169,6 @@ const { title } = Astro.props;
             <RightSidebar headings={headings} editUrl={editUrl} />
           </aside>
         </main> -->
-  </Container>
-</Layout>
+  <!-- </Container> -->
+<!-- </Layout> -->
 

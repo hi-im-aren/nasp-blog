@@ -35,30 +35,31 @@ const features = [
   },
 ];
 ---
-
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl py-1 font-extrabold lg:tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-red-500 ">
-    Everything you need for true zero trust
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    NASP comes batteries included.
-    It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
-  </p>
-</div>
-
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+<div class="shadow-xl rounded-3xl p-16">
+  <div class="mt-16 md:mt-0 ">
+    <h2 class="text-4xl lg:text-5xl py-1 font-extrabold lg:tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-red-500 ">
+      Everything you need for true zero trust
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      NASP comes batteries included.
+      It takes the best parts of state-of-the-art
+      tools and adds its own innovations.
+    </p>
+  </div>
+  
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16 ">
+    {
+      features.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+            <Icon class="text-white" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+            <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </div>
