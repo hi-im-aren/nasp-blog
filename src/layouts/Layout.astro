@@ -8,7 +8,7 @@ import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 export interface Props {
   title: string;
-  classProp: string;
+  classProp?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
